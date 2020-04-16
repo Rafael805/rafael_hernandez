@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  /* background: radial-gradient(at 50% 60%, #873740 0%, #272730 40%, #171720 80%, #070710 100%); */
+}
+
+:root { 
+  --mainFont: 'Sulphur Point', sans-serif;
+  --subFont: sans-serif;
+  --mainRed: #d40749;
+  --mainCyan: #2FE8C3;
+  --mainWhite: #ffffff;
+  --subWhite: #ffffff;
+  --subGray: #8b8b8b;
+  --mainGray: #545454;
+  --mainDark: #0c0f13;
+  --subDark :#222325;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --navBoxShadow: 0 2px 6px 0 rgba(0, 0, 0, .09);
+}
+
+body {
+  margin: 0;
+  font-family: var(--mainFont) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
