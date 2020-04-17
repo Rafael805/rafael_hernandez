@@ -13,7 +13,7 @@ const App = () => {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          <Route exact path={['/', '/rafael_hernandez']}>
             <HomePage />
           </Route>
           <Route path="/about">
