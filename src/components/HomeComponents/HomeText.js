@@ -15,19 +15,17 @@ const HomeText = ({
   const font = useLoader(THREE.FontLoader, fontUrl);
   const { width } = useWindowDimensions();
 
-  console.log(width);
-
   const config = useMemo(
     () => ({
       font,
-      size: width < 900 ? 15 : 30,
+      size: width < 900 ? 10 : 30,
       height: 30,
       curveSegments: 32,
       bevelEnabled: true,
       bevelThickness: 6,
-      bevelSize: 2.5,
+      bevelSize: width < 900 ? 1.5 : 2.5,
       bevelOffset: 0,
-      bevelSegments: 8,
+      bevelSegments: 2,
     }),
     [font, width]
   );
@@ -35,6 +33,7 @@ const HomeText = ({
   const mesh = useUpdate(
     (self) => {
       const size = new THREE.Vector3();
+      console.log(-size.x);
       self.geometry.computeBoundingBox();
       self.geometry.boundingBox.getSize(size);
       self.position.x =

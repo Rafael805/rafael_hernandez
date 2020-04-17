@@ -16,12 +16,13 @@ const MainContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  margin-top: 20px;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
   color: white;
   margin: 20px;
-  font-size: 3.5rem;
+  font-size: 3.3rem;
 `;
 
 const Anchor = styled.a`
