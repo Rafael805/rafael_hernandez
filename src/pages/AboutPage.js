@@ -1,27 +1,43 @@
-import React, { useCallback } from 'react';
-import { Canvas } from 'react-three-fiber'
-import { useSpring } from 'react-spring/three'
-import AboutScene from '../components/AboutScene'
+import React, { Suspense, useEffect, useRef } from 'react';
+import { Canvas, Dom } from 'react-three-fiber';
+import Content from '../components/AboutComponents/Content';
+import Startup from '../components/AboutComponents/Startup';
+import state from '../components/AboutComponents/Store';
+import Diamond from '../components/AboutComponents/Diamond';
 
 const AboutPage = () => {
-    const [{ top, mouse }, set] = useSpring(() => ({ top: 0, mouse: [0, 0] }))
-    const onMouseMove = useCallback(({ clientX: x, clientY: y }) => set({ mouse: [x - window.innerWidth / 2, y - window.innerHeight / 2] }), [])
-    const onScroll = useCallback(e => set({ top: e.target.scrollTop }), [])
+  const scrollArea = useRef();
+  const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
 
-    console.log(top)
+  return (
+    <>
+      <Canvas
+        concurrent
+        pixelRatio={1}
+        orthographic
+        camera={{ zoom: state.zoom, position: [0, 0, 500] }}
+      >
+        <Suspense
+          fallback={<Dom center className="loading" children="Loading..." />}
+        >
+          <Content />
+          <Diamond />
+          <Startup />
+        </Suspense>
+      </Canvas>
 
-
-    return (
-      <>
-        <Canvas className="canvas">
-          <AboutScene top={top} mouse={mouse} />
-        </Canvas>
-
-        <div className="scroll-container" onScroll={onScroll} onMouseMove={onMouseMove}>
-          <div style={{ height: '900vh' }} />
-        </div>
-      </>
-    )
-}
+      <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
+        {new Array(state.sections).fill().map((_, index) => (
+          <div
+            key={index}
+            id={'0' + index}
+            style={{ height: `${(state.pages / state.sections) * 100}vh` }}
+          />
+        ))}
+      </div>
+    </>
+  );
+};
 
 export default AboutPage;

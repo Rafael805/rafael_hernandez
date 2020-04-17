@@ -8,6 +8,8 @@ import * as THREE from "three";
 
 const HomePage = () => {
     const [{ top, mouse }, set] = useSpring(() => ({ top: 0, mouse: [0, 0] }));
+    const [down, setDown] = useState(false);
+
     const onMouseMove = useCallback(
         ({ clientX: x, clientY: y }) =>
             set({
@@ -15,7 +17,7 @@ const HomePage = () => {
             }),
         []
     );
-    const [down, setDown] = useState(false);
+
     return (
         <>
             <Canvas

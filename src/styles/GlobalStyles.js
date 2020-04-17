@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
         height: 100%;
         margin: 0;
         padding: 0;
+        color: #8b8b8b;
         background-color: #272727;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -49,6 +50,10 @@ const GlobalStyles = createGlobalStyle`
         pointer-events: none;
     }
 
+    .canvas > div {
+        z-index: 10000000;
+    }   
+
     .loading {
         padding: 10px;
         transform: translate3d(-50%, -50%, 0);
@@ -74,6 +79,12 @@ const GlobalStyles = createGlobalStyle`
         font-weight: 800;
         line-height: 0.9em;
     }
+
+    .bottom-left {
+        padding: 1.5rem;
+        transform: translate3d(0, -100%, 0) !important;
+    }
+
 `;
 
 export default GlobalStyles;
