@@ -1,9 +1,5 @@
-import './App.css';
-
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import GlobalStyles from './styles/GlobalStyles';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -14,7 +10,6 @@ import Navbar from './components/Navbar';
 const App = () => {
   return (
     <>
-      <GlobalStyles />
       <Router>
         <Navbar />
         <Switch>
