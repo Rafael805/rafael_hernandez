@@ -6,7 +6,6 @@ import { a } from 'react-spring/three'
 const Background = ({ color }) => {
     const { viewport } = useThree();
 
-    console.log(color)
     return (
         <mesh scale ={[viewport.width, viewport.height, 1]} visible>
             <planeBufferGeometry attach="geometry" args={[1, 1]} />

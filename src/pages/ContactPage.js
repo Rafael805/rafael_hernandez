@@ -1,5 +1,4 @@
 import React from 'react';
-import { Canvas, Dom } from 'react-three-fiber';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,8 +7,7 @@ import {
   faLinkedin,
   faGithubSquare,
 } from '@fortawesome/free-brands-svg-icons';
-
-import { faFile, faBaby } from '@fortawesome/free-solid-svg-icons';
+import { faBaby } from '@fortawesome/free-solid-svg-icons';
 
 const MainContainer = styled.div`
   display: flex;
@@ -23,6 +21,7 @@ const MainContainer = styled.div`
 const Icon = styled(FontAwesomeIcon)`
   color: white;
   margin: 20px;
+  font-size: 3.5rem;
 `;
 
 const Anchor = styled.a`
@@ -31,7 +30,7 @@ const Anchor = styled.a`
 `;
 
 const Text = styled.div`
-  font-size: 1.4rem;
+  font-size: 1rem;
 `;
 
 const SocialContainer = styled.div`
@@ -57,7 +56,7 @@ const ContactPage = () => {
               href="https://www.instagram.com/_rafaelhernandez/"
               target="_blank"
             >
-              <Icon icon={faInstagram} size="4x" />
+              <Icon icon={faInstagram} />
             </Anchor>
             <Text>@_rafaelhernandez</Text>
           </SocialContainer>
@@ -68,7 +67,7 @@ const ContactPage = () => {
               href="https://www.facebook.com/profile.php?id=100022630700549"
               target="_blank"
             >
-              <Icon icon={faFacebookSquare} size="4x" />
+              <Icon icon={faFacebookSquare} />
             </Anchor>
             <Text>Rafael Hernandez</Text>
           </SocialContainer>
@@ -79,7 +78,7 @@ const ContactPage = () => {
               href="https://www.linkedin.com/in/rafael-hernandez/"
               target="_blank"
             >
-              <Icon icon={faLinkedin} size="4x" />
+              <Icon icon={faLinkedin} />
             </Anchor>
             <Text>www.linkedin.com/in/rafael-hernandez/</Text>
           </SocialContainer>
