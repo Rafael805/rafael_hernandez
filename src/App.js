@@ -1,11 +1,12 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
+import NewsletterPage from './pages/NewsletterPage'
 
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
@@ -22,10 +23,13 @@ const App = () => {
           <Route path="/connect">
             <ContactPage />
           </Route>
+          <Route path="/sign-up">
+            <NewsletterPage />
+          </Route>
         </Switch>
       </Router>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

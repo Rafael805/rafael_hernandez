@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Nav = styled.nav`
   position: fixed;
@@ -10,7 +10,7 @@ const Nav = styled.nav`
   width: 100%;
   padding: 0.75rem 2rem;
   z-index: 1;
-`;
+`
 
 const NavLinks = styled.ul`
   list-style-type: none;
@@ -33,7 +33,7 @@ const NavLinks = styled.ul`
       border-bottom: 1px solid #fdcb6e;
     }
   }
-`;
+`
 
 const Li = styled.li`
   text-decoration: none;
@@ -44,11 +44,11 @@ const Li = styled.li`
   &:link {
     text-decoration: none;
   }
-`;
+`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-`;
+`
 
 const Navbar = () => {
   return (
@@ -65,7 +65,7 @@ const Navbar = () => {
         </Li>
       </NavLinks>
     </Nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

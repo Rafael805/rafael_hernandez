@@ -1,13 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faInstagram,
   faFacebookSquare,
   faLinkedin,
   faGithubSquare,
-} from '@fortawesome/free-brands-svg-icons';
-import { faBaby } from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/free-brands-svg-icons'
+import { faBaby } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const MainContainer = styled.div`
   display: flex;
@@ -17,29 +18,29 @@ const MainContainer = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 20px;
-`;
+`
 
 const Icon = styled(FontAwesomeIcon)`
   color: white;
   margin: 20px;
   font-size: 3.3rem;
-`;
+`
 
 const Anchor = styled.a`
   text-decoration: none;
   color: inherit;
-`;
+`
 
 const Text = styled.div`
   font-size: 1rem;
-`;
+`
 
 const SocialContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: left;
-`;
+`
 
 const ContactPage = () => {
   return (
@@ -103,9 +104,17 @@ const ContactPage = () => {
             <Text>Baby Photos</Text>
           </SocialContainer>
         </li>
+        <li>
+          <SocialContainer>
+            <Link to="/sign-up">
+              <Icon icon={faBaby} size="4x" />
+            </Link>
+            <Text>Newsletter</Text>
+          </SocialContainer>
+        </li>
       </ul>
     </MainContainer>
-  );
-};
+  )
+}
 
-export default ContactPage;
+export default ContactPage
