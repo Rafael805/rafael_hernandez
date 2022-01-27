@@ -20,7 +20,7 @@
     "react-spring": "^8.0.27",
     "react-three-fiber": "^4.0.22",
     "styled-components": "^5.0.1",
-    "three": "^0.114.0"
+    "three": "^0.137.0"
   },
   "scripts": {
     "deploy": "gh-pages -d build",
